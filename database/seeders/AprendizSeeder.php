@@ -2,13 +2,12 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Aprendiz;
 
-class DatabaseSeeder extends Seeder
+class AprendizSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->call([
-            AprendizSeeder::class,
-        ]);
+        Aprendiz::factory()->count(25)->create();
     }
 }

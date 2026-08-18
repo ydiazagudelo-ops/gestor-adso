@@ -1,7 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AprendizController;
 
-Route::get('/verificacion', function () {
-    return 'Gestor ADSO - entorno configurado correctamente';
-});
+Route::redirect('/', '/aprendices');
+Route::resource('aprendices', AprendizController::class);
+
+//TEMP: Rutas de practica (comentar antes de produccion)
+//Route::get('/ping', fn() => 'pong');
+//Route::get('/hola/{nombre}', fn($nombre) => 'Hola '.$nombre);
+//Route::get('/suma/{a}/{b}', fn($a,$b) => (int)$a + (int)$b);
